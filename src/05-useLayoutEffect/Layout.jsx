@@ -1,8 +1,8 @@
 import { useCounter, useFetch } from "../Hooks"
-import { LoadingQuote, Quote } from "./"
+import { LoadingQuote, Quote } from "../03-ejemplo"
 
 
-export const MultipleCustomHooks = () => {
+export const Layout = () => {
     const {Count,incrementar}=useCounter()
     const {data,hasError,isLoading}= useFetch(`https://api.breakingbadquotes.xyz/v1/quotes/${Count}`)
 
