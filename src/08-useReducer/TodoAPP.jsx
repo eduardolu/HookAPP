@@ -6,11 +6,11 @@ import { GroupItemTodo, FormTodo } from './component'
 
 export const TodoAPP = () => {
 
-    const {todos,handleDeleteTodo,handleToggleTodo,handleNewTodo} =useTodo();
+    const {todos,todosLength,pendienteLength,handleDeleteTodo,handleToggleTodo,handleNewTodo} =useTodo();
     
     return (
     <>
-        <h1>TODO APP : 5, <small>pendientes : 2</small></h1>
+        <h1>TODO APP : {todosLength }, <small>pendientes : { pendienteLength }</small></h1>
         <hr />
         <div className="row">
             <div className="col-7">

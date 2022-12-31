@@ -14,7 +14,6 @@ export const useTodo = () => {
     useEffect(() => {
         localStorage.setItem('todos',JSON.stringify(todos) || [])
     }, [todos])
-    
 
     const handleNewTodo = (todo)=>{
         const action = {
@@ -22,7 +21,6 @@ export const useTodo = () => {
             payload: todo
         }
         dispatchTodo(action);
-        // console.log(todo);
     }
 
     const handleDeleteTodo = (id) => {
@@ -31,6 +29,7 @@ export const useTodo = () => {
             payload: id
         })
     }
+    
     const handleToggleTodo = (id) => {
         dispatchTodo({
             type:'[TODO] toggle todo',
@@ -38,7 +37,12 @@ export const useTodo = () => {
         })
     }
 
-  return {todos,handleDeleteTodo,handleToggleTodo,handleNewTodo
-
+  return {
+    todos,
+    todosLength: todos.length,
+    pendienteLength:todos.filter(todo=>(!todo.done)).length ,
+    handleDeleteTodo,
+    handleToggleTodo,
+    handleNewTodo
   }
 }
