@@ -2,15 +2,19 @@ import { useState } from "react"
 
 export const useCounter = (iniciar=10) =>{
     const [Count, setCount] = useState(iniciar)
-    const incrementar = () =>{
-        setCount(Count+1);
+
+    const incrementar = (value=1) =>{
+        setCount((current)=>current+value);
     }
-    const decrementar = () =>{
-        setCount(Count-1);
+
+    const decrementar = (value=1) =>{
+        setCount((current)=>current-value);
     }
-    const reniciar = () =>{
-        setCount(0);
+
+    const reniciar = (value=iniciar) =>{
+        setCount(value);
     }
+
     return{
         Count,
         incrementar,

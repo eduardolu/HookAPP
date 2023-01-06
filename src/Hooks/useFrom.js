@@ -11,6 +11,7 @@ export const useFrom = ( iniciarForm={}) => {
             [name]:value
         })
     }
+    
     const onResertFrom =()=>{
         setFromState(iniciarForm)
     }

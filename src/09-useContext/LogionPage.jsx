@@ -11,7 +11,7 @@ export const LogionPage = () => {
     <>
         <h1>Logion page</h1>
         <hr />
-        <pre>
+        <pre aria-label='name'>
           {JSON.stringify(user,null,3)}
         </pre>
         
